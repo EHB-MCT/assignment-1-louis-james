@@ -1,22 +1,28 @@
-# Your project name
-A short description of your project. 
+# TouchDesigner AudioExtraction
 
-Next, read this example and adapt it to your project.
+This TouchDesigner project uses an Audio File In operator to input a song, analyze its waveform, and extract significant audio punches or beats. The system processes the audio data, focusing on high-energy peaks (or “punches”) that can be used to drive visual elements or trigger other events in a performance.
 
-If you want to add more sections, please do so after the existing ones (avoid burying your sources under a lot of text!).
+## General information:
 
-Live link: [website.be](website.be) (optional)
+- Audio importation - Blue:
+  Select your audio file into the audiofilein CHOP, if you want to hear your audio file press the arrow in the left column of      the audio device out CHOP.
 
-## Up & running (optional)
-- This should contain step by step instructions to run your project
-- Login information is mentioned here if applicable.
+- Audio punch - Green:
+  Breaks down the waveform, identifying moments of intensity by tracking amplitude changes
+  - The Lag CHOP is used to make a smoother transition between punches, u can change the intensity in the Lag tab.
+  - The Math CHOP is used to take the signal and change its amplitude, this means u can go from a 0 to 1 amplitude to, for example -.8 to .8 which can make a nice effect in speed operators.
+
+- Your visuals Annotate - Red:
+  -  is meant for the user to put his own visuals into that use the outputs for the Math CHOP to make changes in the visuals.
+
+- Beat - Pink:
+  - If you want to use the beat or pulse, this can be used from the Beat Annotate to create a consistent beat or pulse.
+  - you can change the pulse and beat speed by changing the tempo and T Sig from the TimeCode (down left of the screen).
 
 ## Sources 
 
-Given are some examples, delete and replace with your own.
-
-- [Multi auth in Laravel](https://stackoverflow.com/questions/50514738/multi-auth-use-one-page-login-laravel) used in http > controller > LoginController.php (line 18-67)
-- [Audio from ChatGPT](https://chatgpt.com/c/66dae37e-6da8-8001-99ab-245ad328416a) used in resources > music
-- [Chatgpt.com](https://chatgpt.com) ⚠️ this is an invalid example, because it links to a homepage instead of a specific page or issue
-- Generate a ChatGPT share link: options (three dots) > share.
-- If your lecturer still sees these default examples, you're in trouble
+- [Youtube.com](https://youtu.be/olhePB-r7I4?si=v_DGM0fbLOYHT51p) this was used for an example particlesGPU setup.
+- [Youtube.com](https://youtu.be/rGoCbVmGtPE?si=qd2QvpIqjzrw-6Bq) this was used for the the creation of audio punch
+- use of ChatGPT to make this readme [Chatgpt.com](https://chatgpt.com/share/67117db5-3780-800c-8f6d-8a9b47d47a9f).
+- [Soundcload.com](https://soundcloud.com/klsr_b) Musiq from artist Klsr was used as an example song for this project.
+  
